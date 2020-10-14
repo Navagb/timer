@@ -1,0 +1,221 @@
+* {
+    box-sizing: border-box;
+    font-family: Nunito;
+}
+
+body {
+    background-color: #3e94ec;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.relative {
+    margin-top: 15vh;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+h1 {
+    margin-bottom: 45px;
+    color: #fff;
+    font-size: 48px;
+}
+
+#settime {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+#settime>div {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: baseline;
+}
+
+#settime input {
+    width: 115px;
+    box-sizing: border-box;
+    height: 35px;
+    font-size: 22px;
+    border: none;
+    padding: 0 0 0 3px;
+}
+
+input[type=number]:focus {
+    outline: none;
+    text-indent: 4px;
+}
+
+#settime label {
+    font-size: 18px;
+}
+
+.minute {
+    margin: 0 15px;
+}
+
+.submit {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.submit button {
+    width: 115px;
+    padding: 5px 0;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.submit button:focus {
+    outline: none;
+}
+
+#start {
+    background-color: rgba(69, 121, 222, 0.9);
+    border: 1px solid rgba(69, 121, 222, 0.7);
+    box-shadow: 0px 2px 0 rgba(69, 121, 222, 0.4), 2px 4px 6px rgba(69, 121, 222, 0.3);
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 1px;
+    transition: all 150ms linear;
+}
+
+#start:hover {
+    background-color: rgba(69, 121, 222, 0.8);
+    border: 1px solid rgba(0, 0, 0, .05);
+    box-shadow: 1px 1px 2px rgba(255, 255, 255, .2);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#stop {
+    background-color: rgba(237, 69, 102, 0.9);
+    border: 1px solid rgba(237, 69, 102, 0.7);
+    box-shadow: 0px 2px 0 rgba(237, 69, 102, 0.4), 2px 4px 6px rgba(237, 69, 102, 0.3);
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 1px;
+    transition: all 150ms linear;
+}
+
+#stop:hover {
+    background-color: rgba(237, 69, 102, 0.8);
+    border: 1px solid rgba(0, 0, 0, .05);
+    box-shadow: 1px 1px 2px rgba(255, 255, 255, .2);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#reset {
+    background-color: rgba(47, 53, 59, 0.9);
+    border: 1px solid rgba(47, 53, 59, 0.7);
+    box-shadow: 0px 2px 0 rgba(47, 53, 59, 0.4), 2px 4px 6px rgba(47, 53, 59, 0.3);
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 1px;
+    transition: all 150ms linear;
+}
+
+#reset:hover {
+    background-color: rgba(47, 53, 59, 0.8);
+    border: 1px solid rgba(0, 0, 0, .05);
+    box-shadow: 1px 1px 2px rgba(255, 255, 255, .2);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.output {
+    margin-top: 30px;
+    position: relative;
+}
+
+.progress-ring-circle {
+    transform-origin: center;
+    transform: rotate(-90deg);
+    transition: stroke-dashoffset 0.7s linear;
+}
+
+.output-time {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 50%;
+    height: 40px;
+    margin-top: -20px;
+}
+
+.output-time span {
+    font-size: 25pt;
+}
+
+.output-time span:nth-child(1)::after {
+    content: ':';
+}
+
+.output-time span:nth-child(2)::after {
+    content: ':';
+}
+
+
+/* Table style */
+
+#table {
+    margin-top: 30px;
+    width: 400px;
+    background: #fff;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 10px 50px 0px rgba(0, 0, 0, 0.5);
+}
+
+table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+table thead th,
+table tbody td {
+    padding: 15px;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+table thead th {
+    background: #454ac4;
+    color: #eee;
+    font-size: 16px;
+    position: sticky;
+    top: -1px;
+}
+
+table tbody td {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+table tbody tr:last-child td {
+    border: none;
+}
+
+table thead th:nth-child(1),
+table tbody td:nth-child(1) {
+    width: 50px;
+    text-align: center;
+}
+
+table tbody td:nth-child(1) {
+    background: #6367db;
+    color: #eee;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+table tbody tr:hover,
+table tbody tr:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.1);
+}
