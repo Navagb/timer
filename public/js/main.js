@@ -10,7 +10,7 @@ const circleLength = 2 * Math.PI * radius;
 
 function tick() {
     if (runTime === 0) {
-        counter--;
+
         var out_h = document.getElementById("out-h");
         var out_m = document.getElementById("out-m");
         var out_s = document.getElementById("out-s");
@@ -32,12 +32,14 @@ function tick() {
         setProgress((time - counter) / time * 100);
         if (counter === 0) {
             finishedTime = new Date();
-            clearInterval(intervalHandle);
+            // clearInterval(intervalHandle);
             sendDate();
+            setTimeout(resetTime, 1000);
             // ready();
             setTimeout(ready, 1000);
+            // resetTime();
         }
-
+        counter--;
     } else {
         runTime = 0;
         intervalHandle = setInterval(tick, 1000);
@@ -45,25 +47,37 @@ function tick() {
 }
 
 function startTime() {
+
+
     if (runTime === 0) {
         var hour = document.getElementById("hour").value;
         var minute = document.getElementById("minute").value;
         var second = document.getElementById("second").value;
         time = counter = hour * 3600 + minute * 60 + second * 1;
-        if (time === 0) return 0;
+        if (time === 0) {
+            errorMessage();
+            return 0;
+        }
         startedTime = new Date();
+        tick();
         intervalHandle = setInterval(tick, 1000);
 
 
 
     } else {
         tick();
+
     }
+    enableStopButton();
+    disableStartButton();
 }
 
 function stopTime() {
+    disableStopButton();
+    enableStartButton();
     clearInterval(intervalHandle);
     runTime = 1;
+
 }
 
 function resetTime() {
@@ -75,8 +89,11 @@ function resetTime() {
     document.getElementById("second").value = 0;
     runTime = 0;
     clearInterval(intervalHandle);
+
     document.querySelector('.progress-ring-circle').style.strokeDasharray = `${circleLength} ${circleLength}`;
     document.querySelector('.progress-ring-circle').style.strokeDashoffset = circleLength;
+    enableStartButton();
+    disableStopButton();
 }
 
 function setProgress(persent) {
@@ -108,3 +125,26 @@ function ready() {
     document.querySelector('.progress-ring-circle').style.strokeDashoffset = circleLength;
 
 };
+
+function disableStartButton() {
+    document.getElementById('start').disabled = true;
+}
+
+function enableStartButton() {
+    document.getElementById('start').disabled = false;
+}
+
+function disableStopButton() {
+    document.getElementById('stop').disabled = true;
+}
+
+function enableStopButton() {
+    document.getElementById('stop').disabled = false;
+}
+
+function errorMessage() {
+    document.getElementById('error').className = "error-msg";
+    setTimeout(function() {
+        document.getElementById('error').className = "displey-none";
+    }, 2000);
+}

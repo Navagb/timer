@@ -32,6 +32,10 @@
                 </div>
             @endif
             <h1>Timer</h1>
+            <div class="displey-none" id="error">
+                <i class="fa fa-times-circle"></i>
+                Please set time.
+            </div>
             <form action="" id="settime">
                
                     <div class="hour">
@@ -53,12 +57,14 @@
             <div class="submit">
             @csrf
                 <button id="start" onclick="startTime()">Start</button>
-                <button id="stop" onclick="stopTime()">Stop</button>
+                <button id="stop" onclick="stopTime()" disabled>Stop</button>
                 <button id="reset" onclick="resetTime()">Reset</button>
             </div>
             <div class="output">
                 <svg class="progress-ring" width="220" height="220">
+                    <circle  stroke="rgba(0,0,0,0.3)" stroke-width="7" cx="110" cy="110"  r="96" fill="transparent"/>
                     <circle class="progress-ring-circle" stroke="#fff" stroke-width="7" cx="110" cy="110"  r="96" fill="transparent"/>
+
                 </svg>
             
             <div class="output-time">

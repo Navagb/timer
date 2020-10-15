@@ -1,3 +1,4 @@
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 * {
     box-sizing: border-box;
     font-family: Nunito;
@@ -16,12 +17,29 @@ body {
     text-align: center;
     display: flex;
     flex-flow: column nowrap;
+    position: relative;
 }
 
 h1 {
     margin-bottom: 45px;
     color: #fff;
     font-size: 48px;
+}
+
+.error-msg {
+    position: absolute;
+    width: 100%;
+    top: 90px;
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 3px 3px 3px 3px;
+    color: #D8000C;
+    background-color: #FF99AA;
+    text-align: left;
+}
+
+.displey-none {
+    display: none;
 }
 
 #settime {
@@ -87,6 +105,20 @@ input[type=number]:focus {
     transition: all 150ms linear;
 }
 
+#start:disabled {
+    background-color: rgba(69, 121, 222, 0.8);
+    border: 1px solid rgba(0, 0, 0, .05);
+    box-shadow: 1px 1px 2px rgba(255, 255, 255, .2);
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#start:disabled:hover {
+    background-color: rgba(69, 121, 222, 0.8);
+    border: 1px solid rgba(0, 0, 0, .05);
+    box-shadow: 1px 1px 2px rgba(255, 255, 255, .2);
+    color: rgba(255, 255, 255, 0.4);
+}
+
 #start:hover {
     background-color: rgba(69, 121, 222, 0.8);
     border: 1px solid rgba(0, 0, 0, .05);
@@ -102,6 +134,20 @@ input[type=number]:focus {
     font-weight: 900;
     letter-spacing: 1px;
     transition: all 150ms linear;
+}
+
+#stop:disabled {
+    background-color: rgba(237, 69, 102, 0.8);
+    border: 1px solid rgba(0, 0, 0, .05);
+    box-shadow: 1px 1px 2px rgba(255, 255, 255, .2);
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#stop:disabled:hover {
+    background-color: rgba(237, 69, 102, 0.8);
+    border: 1px solid rgba(0, 0, 0, .05);
+    box-shadow: 1px 1px 2px rgba(255, 255, 255, .2);
+    color: rgba(255, 255, 255, 0.4);
 }
 
 #stop:hover {
