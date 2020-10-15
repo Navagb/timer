@@ -36,8 +36,10 @@
                 <i class="fa fa-times-circle"></i>
                 Please set time.
             </div>
+            
+
             <form action="" id="settime">
-               
+            
                     <div class="hour">
                         <label for="hour">Hour</label>
                         <input type="number" name="hour" id="hour" placeholder="0" min="0">
@@ -54,8 +56,9 @@
                
 
             </form>
+            
             <div class="submit">
-            @csrf
+            
                 <button id="start" onclick="startTime()">Start</button>
                 <button id="stop" onclick="stopTime()" disabled>Stop</button>
                 <button id="reset" onclick="resetTime()">Reset</button>

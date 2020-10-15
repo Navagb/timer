@@ -14,7 +14,7 @@ class TimerController extends Controller
         $timer->started = request('started') ;
         $timer->finished = request('finished') ;
         $timer->save();
-        return view('welcome' ); 
+        return redirect('/'); 
     }
     public function index(){
         $timers = Timer::all() ;  

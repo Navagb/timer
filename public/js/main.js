@@ -103,11 +103,11 @@ function setProgress(persent) {
 
 function sendDate() {
     var request = new XMLHttpRequest();
-    var token = document.querySelector('meta[name="csrf-token"]').content;
+    var token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
     var body = "started=" + encodeURIComponent(startedTime.toLocaleTimeString()) + "&finished=" + encodeURIComponent(finishedTime.toLocaleTimeString()) + "&value=" + encodeURIComponent(convertToDate(time));
 
-    request.open("POST", "/", true);
+    request.open("POST", "/post", true);
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     request.setRequestHeader("x-csrf-token", token);
     request.send(body);

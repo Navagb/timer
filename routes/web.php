@@ -14,5 +14,5 @@ use App\Http\Controllers\TimerController ;
 |
 */
 
-Route::get('/', [TimerController::class , 'index'] );
-Route::post('/', [TimerController::class , 'store']);
+Route::get('/', [TimerController::class , 'index']);
+Route::post('/post', [TimerController::class , 'store']);
