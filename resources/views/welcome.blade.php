@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <title>Laravel</title>
-        <script src="js/main.js"></script>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -99,10 +98,12 @@
             </div>
             
         </div>
+        <script src="js/main.js"></script>
         
         <script>
             
-            document.addEventListener("DOMContentLoaded", ready);
+            document.addEventListener("DOMContentLoaded", isReload);
+            
         </script>
     </body>
 </html>
